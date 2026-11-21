@@ -1,0 +1,463 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-21T23:58:55",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [
+        {
+            "description": "Ayak izi nitelikleri sembolle eşleşmiyor: 'Malzeme listesinden hariç tut' ayarları farklı",
+            "items": [
+                {
+                    "description": "Ayak İzi H1",
+                    "pos": {
+                        "x": 104.0,
+                        "y": 64.0
+                    },
+                    "uuid": "aaa2643b-22b0-4f40-8f58-c9d311b8427b"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Ayak izi nitelikleri sembolle eşleşmiyor: 'Malzeme listesinden hariç tut' ayarları farklı",
+            "items": [
+                {
+                    "description": "Ayak İzi H2",
+                    "pos": {
+                        "x": 160.0,
+                        "y": 64.0
+                    },
+                    "uuid": "0787f427-539e-4b02-ba42-6bd3c3cccc05"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PC14-Pad2)) yoksun",
+            "items": [
+                {
+                    "description": "2 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 124.825,
+                        "y": 79.0
+                    },
+                    "uuid": "190ca408-91ab-4dc1-8dfe-28f814a38dfa"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PC15-Pad3)) yoksun",
+            "items": [
+                {
+                    "description": "3 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 124.825,
+                        "y": 79.8
+                    },
+                    "uuid": "2e99590c-400f-41d3-938c-cb4979fbb50f"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PA9{slash}UCPD1_DBCC1-Pad19)) yoksun",
+            "items": [
+                {
+                    "description": "19 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 133.175,
+                        "y": 82.2
+                    },
+                    "uuid": "f28ec50d-3bbc-49df-9ced-ce95ca29072c"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PC6-Pad20)) yoksun",
+            "items": [
+                {
+                    "description": "20 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 133.175,
+                        "y": 81.4
+                    },
+                    "uuid": "aff1a523-7dc3-4107-8790-1bd59a1765d0"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PA10{slash}UCPD1_DBCC2-Pad21)) yoksun",
+            "items": [
+                {
+                    "description": "21 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 133.175,
+                        "y": 80.6
+                    },
+                    "uuid": "845b8c14-020b-4772-a446-e57b38eef5d5"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PA9{slash}PA11-Pad22)) yoksun",
+            "items": [
+                {
+                    "description": "22 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 133.175,
+                        "y": 79.8
+                    },
+                    "uuid": "54a644bd-9344-458d-8523-8740f3ac1b2e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PA10{slash}PA12-Pad23)) yoksun",
+            "items": [
+                {
+                    "description": "23 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 133.175,
+                        "y": 79.0
+                    },
+                    "uuid": "d8dfe0cf-fee1-4825-bd81-81b0cfb1fc4a"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-PA15-Pad26)) yoksun",
+            "items": [
+                {
+                    "description": "26 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 131.0,
+                        "y": 76.825
+                    },
+                    "uuid": "06e20639-c6b2-421d-94c7-639114d55f00"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U3-NC-Pad1)) yoksun",
+            "items": [
+                {
+                    "description": "1 için [<no net>] U3 ayak F.Cu",
+                    "pos": {
+                        "x": 149.525,
+                        "y": 71.095
+                    },
+                    "uuid": "f7589fc1-f04f-41a9-b161-76a965020f09"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U3-NC-Pad2)) yoksun",
+            "items": [
+                {
+                    "description": "2 için [<no net>] U3 ayak F.Cu",
+                    "pos": {
+                        "x": 149.525,
+                        "y": 72.365
+                    },
+                    "uuid": "83cacc29-6948-44a8-947f-b65814fb4166"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U3-NC-Pad3)) yoksun",
+            "items": [
+                {
+                    "description": "3 için [<no net>] U3 ayak F.Cu",
+                    "pos": {
+                        "x": 149.525,
+                        "y": 73.635
+                    },
+                    "uuid": "b09a1ea1-2e42-47cc-b9be-c2b02ad564fc"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U3-NC-Pad7)) yoksun",
+            "items": [
+                {
+                    "description": "7 için [<no net>] U3 ayak F.Cu",
+                    "pos": {
+                        "x": 154.475,
+                        "y": 72.365
+                    },
+                    "uuid": "c67524a6-de0f-4895-a057-b7788157b8c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U4-Vref-Pad5)) yoksun",
+            "items": [
+                {
+                    "description": "5 için [<no net>] U4 ayak F.Cu",
+                    "pos": {
+                        "x": 113.475,
+                        "y": 97.905
+                    },
+                    "uuid": "0e831c69-ed60-4b1f-8225-261504d7dacf"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U5-Vref-Pad5)) yoksun",
+            "items": [
+                {
+                    "description": "5 için [<no net>] U5 ayak F.Cu",
+                    "pos": {
+                        "x": 152.475,
+                        "y": 97.905
+                    },
+                    "uuid": "12dd41df-0204-4f39-9945-bb017c5c62fd"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        }
+    ],
+    "source": "gok_gw1_can_gateway.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Dikdörtgen Edge.Cuts üzerinde",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 60.0
+                    },
+                    "uuid": "908778d6-5aa8-44bc-9007-3da0f8c46d27"
+                },
+                {
+                    "description": "H2 referans alanı",
+                    "pos": {
+                        "x": 160.0,
+                        "y": 59.85
+                    },
+                    "uuid": "c30a0559-5baa-4bf9-be50-df6463441409"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Dikdörtgen Edge.Cuts üzerinde",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 60.0
+                    },
+                    "uuid": "908778d6-5aa8-44bc-9007-3da0f8c46d27"
+                },
+                {
+                    "description": "H1 referans alanı",
+                    "pos": {
+                        "x": 104.0,
+                        "y": 59.85
+                    },
+                    "uuid": "18eb61d9-df2f-472a-9331-7974e68f62f7"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Bölüm'si U3'in F.Silkscreen üzerinde",
+                    "pos": {
+                        "x": 154.06,
+                        "y": 75.56
+                    },
+                    "uuid": "2e6d0a29-70f5-45bc-b904-de0ca266b22f"
+                },
+                {
+                    "description": "C6 referans alanı",
+                    "pos": {
+                        "x": 152.0,
+                        "y": 76.07
+                    },
+                    "uuid": "af7cb902-a5bb-40cb-8285-c2d7e61affc4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "C7 referans alanı",
+                    "pos": {
+                        "x": 129.0,
+                        "y": 94.07
+                    },
+                    "uuid": "38069e22-13d6-42d2-8c12-b59b4f68e518"
+                },
+                {
+                    "description": "Bölüm'si R10'in F.Silkscreen üzerinde",
+                    "pos": {
+                        "x": 128.762742,
+                        "y": 93.5225
+                    },
+                    "uuid": "38f1abe5-60bb-415e-ba9a-c95bb7c122ba"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "C7 referans alanı",
+                    "pos": {
+                        "x": 129.0,
+                        "y": 94.07
+                    },
+                    "uuid": "38069e22-13d6-42d2-8c12-b59b4f68e518"
+                },
+                {
+                    "description": "2 için [MAINT_SW] R10 ayak F.Cu",
+                    "pos": {
+                        "x": 129.825,
+                        "y": 93.0
+                    },
+                    "uuid": "a6000374-f51d-4b50-b080-855b05b68a7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "R12 referans alanı",
+                    "pos": {
+                        "x": 112.57,
+                        "y": 90.0
+                    },
+                    "uuid": "f120a36a-160f-456d-b4a8-777373c6ed25"
+                },
+                {
+                    "description": "2 için [GND] S1 ayak F.Cu",
+                    "pos": {
+                        "x": 112.15,
+                        "y": 88.9
+                    },
+                    "uuid": "98438b15-e9f1-4996-a09b-7c211c9ba84e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "R3 referans alanı",
+                    "pos": {
+                        "x": 118.57,
+                        "y": 83.0
+                    },
+                    "uuid": "82e4d930-457a-4d92-9996-faec7cb73461"
+                },
+                {
+                    "description": "1'in Delik İçi Kaplamalı Geçit pedi [3V3] J3",
+                    "pos": {
+                        "x": 117.5,
+                        "y": 83.5
+                    },
+                    "uuid": "12111132-8fcd-4144-b517-56847877d707"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "D5 referans alanı",
+                    "pos": {
+                        "x": 118.6,
+                        "y": 96.0
+                    },
+                    "uuid": "cb2f83c1-deeb-4efb-adc4-ea03a92fc915"
+                },
+                {
+                    "description": "1 için [3V3] R13 ayak F.Cu",
+                    "pos": {
+                        "x": 118.0,
+                        "y": 94.825
+                    },
+                    "uuid": "8f1921e1-a299-4f9d-a573-616a765eeb6b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

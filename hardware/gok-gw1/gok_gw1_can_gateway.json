@@ -1,0 +1,2234 @@
+{
+  "name": "gok_gw1_can_gateway",
+  "description": "GOK-GW1 Secure CAN Gateway: STM32G0B1KBT6 (LQFP-32, 2x FDCAN) hat-ici CAN guvenlik duvari; iki SN65HVD230 (Port A guvensiz domain, Port B korunan domain) + NUP2105L ESD + jumperli 120R, ATECC608A guven koku, TPS3823 watchdog, atolye anahtari, tamper, PWR/PASS/BLOCK/DIAG LED, SWD, BOOT0 jumper ve GOK-TN1 ile ayni pin sirali 2x5 istifleme basligi (3V3 TN1'den gelir).",
+  "components": [
+    {
+      "ref": "J1",
+      "value": "GOK-STACK 2x5",
+      "category": "connector",
+      "package": "PinHeader_2x05_P2.54mm_Vertical",
+      "kicad_symbol": "Connector_Generic:Conn_02x05_Odd_Even",
+      "kicad_footprint": "Connector_PinHeader_2.54mm:PinHeader_2x05_P2.54mm_Vertical",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "4",
+          "name": "Pin_4",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "5",
+          "name": "Pin_5",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "6",
+          "name": "Pin_6",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "7",
+          "name": "Pin_7",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "8",
+          "name": "Pin_8",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "9",
+          "name": "Pin_9",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "10",
+          "name": "Pin_10",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        25,
+        6.5,
+        90
+      ]
+    },
+    {
+      "ref": "C1",
+      "value": "10uF",
+      "category": "capacitor",
+      "package": "C_0805_2012Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        16,
+        5,
+        0
+      ]
+    },
+    {
+      "ref": "R1",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        22,
+        11,
+        0
+      ]
+    },
+    {
+      "ref": "U1",
+      "value": "STM32G0B1KBT6",
+      "category": "microcontroller",
+      "package": "LQFP-32_7x7mm_P0.8mm",
+      "kicad_symbol": "MCU_ST_STM32G0:STM32G0B1KBTx",
+      "kicad_footprint": "Package_QFP:LQFP-32_7x7mm_P0.8mm",
+      "pins": [
+        {
+          "number": "1",
+          "name": "PB9",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "4",
+          "name": "VDD",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "5",
+          "name": "VSS",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "6",
+          "name": "PF2",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "7",
+          "name": "PA0",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "8",
+          "name": "PA1",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "9",
+          "name": "PA2",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "10",
+          "name": "PA3",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "11",
+          "name": "PA4",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "12",
+          "name": "PA5",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "13",
+          "name": "PA6",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "14",
+          "name": "PA7",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "15",
+          "name": "PB0",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "16",
+          "name": "PB1",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "17",
+          "name": "PB2",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "18",
+          "name": "PA8",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "24",
+          "name": "PA13",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "25",
+          "name": "PA14",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "27",
+          "name": "PB3",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "28",
+          "name": "PB4",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "29",
+          "name": "PB5",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "30",
+          "name": "PB6",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "31",
+          "name": "PB7",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "32",
+          "name": "PB8",
+          "electrical_type": "bidirectional"
+        }
+      ],
+      "pcb_pos": [
+        29,
+        21,
+        0
+      ]
+    },
+    {
+      "ref": "C2",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        23.5,
+        15.8,
+        0
+      ]
+    },
+    {
+      "ref": "C3",
+      "value": "4.7uF",
+      "category": "capacitor",
+      "package": "C_0805_2012Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        35,
+        15.8,
+        0
+      ]
+    },
+    {
+      "ref": "U2",
+      "value": "TPS3823-33",
+      "category": "ic",
+      "package": "SOT-23-5",
+      "kicad_symbol": "Power_Supervisor:TPS3823-xxDBV",
+      "kicad_footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": [
+        {
+          "number": "1",
+          "name": "~{RESET}",
+          "electrical_type": "output"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "~{MR}",
+          "electrical_type": "input"
+        },
+        {
+          "number": "4",
+          "name": "WDI",
+          "electrical_type": "input"
+        },
+        {
+          "number": "5",
+          "name": "V_{DD}",
+          "electrical_type": "power_in"
+        }
+      ],
+      "pcb_pos": [
+        13,
+        15,
+        0
+      ]
+    },
+    {
+      "ref": "C4",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        9,
+        15,
+        0
+      ]
+    },
+    {
+      "ref": "R2",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        13,
+        19,
+        0
+      ]
+    },
+    {
+      "ref": "C5",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        17,
+        19,
+        0
+      ]
+    },
+    {
+      "ref": "J2",
+      "value": "SWD",
+      "category": "connector",
+      "package": "PinHeader_1x05_P2.54mm_Vertical",
+      "kicad_symbol": "Connector_Generic:Conn_01x05",
+      "kicad_footprint": "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "4",
+          "name": "Pin_4",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "5",
+          "name": "Pin_5",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        4.5,
+        11.5,
+        0
+      ]
+    },
+    {
+      "ref": "R3",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        20,
+        23,
+        90
+      ]
+    },
+    {
+      "ref": "J3",
+      "value": "BOOT0 jumper",
+      "category": "connector",
+      "package": "PinHeader_1x02_P2.54mm_Vertical",
+      "kicad_symbol": "Connector_Generic:Conn_01x02",
+      "kicad_footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        17.5,
+        23.5,
+        0
+      ]
+    },
+    {
+      "ref": "U3",
+      "value": "ATECC608A-SSHDA",
+      "category": "ic",
+      "package": "SOIC-8_3.9x4.9mm_P1.27mm",
+      "kicad_symbol": "Security:ATECC608A-SSHDA",
+      "kicad_footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": [
+        {
+          "number": "4",
+          "name": "GND",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "5",
+          "name": "SDA",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "6",
+          "name": "SCL",
+          "electrical_type": "input"
+        },
+        {
+          "number": "8",
+          "name": "VCC",
+          "electrical_type": "power_in"
+        }
+      ],
+      "pcb_pos": [
+        52,
+        13,
+        0
+      ]
+    },
+    {
+      "ref": "C6",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        52,
+        17.5,
+        0
+      ]
+    },
+    {
+      "ref": "R4",
+      "value": "4.7k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        47,
+        11,
+        90
+      ]
+    },
+    {
+      "ref": "R5",
+      "value": "4.7k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        47,
+        14.5,
+        90
+      ]
+    },
+    {
+      "ref": "R6",
+      "value": "1k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        45,
+        8,
+        0
+      ]
+    },
+    {
+      "ref": "D1",
+      "value": "LED green PWR",
+      "category": "led",
+      "package": "LED_0603_1608Metric",
+      "kicad_symbol": "Device:LED",
+      "kicad_footprint": "LED_SMD:LED_0603_1608Metric",
+      "pins": [
+        {
+          "number": "2",
+          "name": "A",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "1",
+          "name": "K",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        49,
+        8,
+        0
+      ]
+    },
+    {
+      "ref": "R7",
+      "value": "1k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        41.0,
+        22.5,
+        90
+      ]
+    },
+    {
+      "ref": "D2",
+      "value": "LED green PASS",
+      "category": "led",
+      "package": "LED_0603_1608Metric",
+      "kicad_symbol": "Device:LED",
+      "kicad_footprint": "LED_SMD:LED_0603_1608Metric",
+      "pins": [
+        {
+          "number": "2",
+          "name": "A",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "1",
+          "name": "K",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        41.0,
+        26.5,
+        90
+      ]
+    },
+    {
+      "ref": "R8",
+      "value": "1k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        45.5,
+        22.5,
+        90
+      ]
+    },
+    {
+      "ref": "D3",
+      "value": "LED red BLOCK",
+      "category": "led",
+      "package": "LED_0603_1608Metric",
+      "kicad_symbol": "Device:LED",
+      "kicad_footprint": "LED_SMD:LED_0603_1608Metric",
+      "pins": [
+        {
+          "number": "2",
+          "name": "A",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "1",
+          "name": "K",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        45.5,
+        26.5,
+        90
+      ]
+    },
+    {
+      "ref": "R9",
+      "value": "1k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        50.0,
+        22.5,
+        90
+      ]
+    },
+    {
+      "ref": "D4",
+      "value": "LED yellow DIAG",
+      "category": "led",
+      "package": "LED_0603_1608Metric",
+      "kicad_symbol": "Device:LED",
+      "kicad_footprint": "LED_SMD:LED_0603_1608Metric",
+      "pins": [
+        {
+          "number": "2",
+          "name": "A",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "1",
+          "name": "K",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        50.0,
+        26.5,
+        90
+      ]
+    },
+    {
+      "ref": "J4",
+      "value": "WORKSHOP KEY",
+      "category": "connector",
+      "package": "PhoenixContact_MC_1,5_2-G-3.5_1x02_P3.50mm_Horizontal",
+      "kicad_symbol": "Connector_Generic:Conn_01x02",
+      "kicad_footprint": "Connector_Phoenix_MC:PhoenixContact_MC_1,5_2-G-3.5_1x02_P3.50mm_Horizontal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        31,
+        49.3,
+        180
+      ]
+    },
+    {
+      "ref": "R10",
+      "value": "1k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        29,
+        33,
+        0
+      ]
+    },
+    {
+      "ref": "R11",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        33,
+        33,
+        0
+      ]
+    },
+    {
+      "ref": "C7",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        29,
+        35.5,
+        0
+      ]
+    },
+    {
+      "ref": "S1",
+      "value": "TAMPER",
+      "category": "switch",
+      "package": "SW_SPST_TL3342",
+      "kicad_symbol": "Switch:SW_Push",
+      "kicad_footprint": "Button_Switch_SMD:SW_SPST_TL3342",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "2",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        9,
+        27,
+        0
+      ]
+    },
+    {
+      "ref": "R12",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        14,
+        30,
+        90
+      ]
+    },
+    {
+      "ref": "C8",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        17.5,
+        30,
+        90
+      ]
+    },
+    {
+      "ref": "J5",
+      "value": "PORT A CANH CANL GND",
+      "category": "connector",
+      "package": "PhoenixContact_MC_1,5_3-G-3.5_1x03_P3.50mm_Horizontal",
+      "kicad_symbol": "Connector_Generic:Conn_01x03",
+      "kicad_footprint": "Connector_Phoenix_MC:PhoenixContact_MC_1,5_3-G-3.5_1x03_P3.50mm_Horizontal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        17,
+        49.3,
+        180
+      ]
+    },
+    {
+      "ref": "U4",
+      "value": "SN65HVD230",
+      "category": "ic",
+      "package": "SOIC-8_3.9x4.9mm_P1.27mm",
+      "kicad_symbol": "Interface_CAN_LIN:SN65HVD230",
+      "kicad_footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": [
+        {
+          "number": "1",
+          "name": "D",
+          "electrical_type": "input"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "VCC",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "R",
+          "electrical_type": "output"
+        },
+        {
+          "number": "6",
+          "name": "CANL",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "7",
+          "name": "CANH",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "8",
+          "name": "Rs",
+          "electrical_type": "input"
+        }
+      ],
+      "pcb_pos": [
+        11,
+        36,
+        0
+      ]
+    },
+    {
+      "ref": "C9",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        5,
+        33,
+        90
+      ]
+    },
+    {
+      "ref": "R13",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        18,
+        34,
+        90
+      ]
+    },
+    {
+      "ref": "D5",
+      "value": "NUP2105L",
+      "category": "diode",
+      "package": "SOT-23",
+      "kicad_symbol": "Power_Protection:NUP2105L",
+      "kicad_footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": [
+        {
+          "number": "1",
+          "name": "K",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "K",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "A",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        21,
+        36,
+        90
+      ]
+    },
+    {
+      "ref": "R14",
+      "value": "120R",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        3.5,
+        46,
+        90
+      ]
+    },
+    {
+      "ref": "J6",
+      "value": "TERM CAN_A 120R",
+      "category": "connector",
+      "package": "PinHeader_1x02_P2.54mm_Vertical",
+      "kicad_symbol": "Connector_Generic:Conn_01x02",
+      "kicad_footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        3.5,
+        38,
+        0
+      ]
+    },
+    {
+      "ref": "J7",
+      "value": "PORT B CANH CANL GND",
+      "category": "connector",
+      "package": "PhoenixContact_MC_1,5_3-G-3.5_1x03_P3.50mm_Horizontal",
+      "kicad_symbol": "Connector_Generic:Conn_01x03",
+      "kicad_footprint": "Connector_Phoenix_MC:PhoenixContact_MC_1,5_3-G-3.5_1x03_P3.50mm_Horizontal",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "Pin_3",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        56,
+        49.3,
+        180
+      ]
+    },
+    {
+      "ref": "U5",
+      "value": "SN65HVD230",
+      "category": "ic",
+      "package": "SOIC-8_3.9x4.9mm_P1.27mm",
+      "kicad_symbol": "Interface_CAN_LIN:SN65HVD230",
+      "kicad_footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": [
+        {
+          "number": "1",
+          "name": "D",
+          "electrical_type": "input"
+        },
+        {
+          "number": "2",
+          "name": "GND",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "3",
+          "name": "VCC",
+          "electrical_type": "power_in"
+        },
+        {
+          "number": "4",
+          "name": "R",
+          "electrical_type": "output"
+        },
+        {
+          "number": "6",
+          "name": "CANL",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "7",
+          "name": "CANH",
+          "electrical_type": "bidirectional"
+        },
+        {
+          "number": "8",
+          "name": "Rs",
+          "electrical_type": "input"
+        }
+      ],
+      "pcb_pos": [
+        50,
+        36,
+        0
+      ]
+    },
+    {
+      "ref": "C10",
+      "value": "100nF",
+      "category": "capacitor",
+      "package": "C_0603_1608Metric",
+      "kicad_symbol": "Device:C",
+      "kicad_footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        44,
+        33,
+        90
+      ]
+    },
+    {
+      "ref": "R15",
+      "value": "10k",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        55,
+        32,
+        90
+      ]
+    },
+    {
+      "ref": "D6",
+      "value": "NUP2105L",
+      "category": "diode",
+      "package": "SOT-23",
+      "kicad_symbol": "Power_Protection:NUP2105L",
+      "kicad_footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": [
+        {
+          "number": "1",
+          "name": "K",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "K",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "3",
+          "name": "A",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        58.5,
+        36,
+        90
+      ]
+    },
+    {
+      "ref": "R16",
+      "value": "120R",
+      "category": "resistor",
+      "package": "R_0603_1608Metric",
+      "kicad_symbol": "Device:R",
+      "kicad_footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": [
+        {
+          "number": "1",
+          "name": "",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        41,
+        46,
+        90
+      ]
+    },
+    {
+      "ref": "J8",
+      "value": "TERM CAN_B 120R",
+      "category": "connector",
+      "package": "PinHeader_1x02_P2.54mm_Vertical",
+      "kicad_symbol": "Connector_Generic:Conn_01x02",
+      "kicad_footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical",
+      "pins": [
+        {
+          "number": "1",
+          "name": "Pin_1",
+          "electrical_type": "passive"
+        },
+        {
+          "number": "2",
+          "name": "Pin_2",
+          "electrical_type": "passive"
+        }
+      ],
+      "pcb_pos": [
+        41,
+        38,
+        0
+      ]
+    },
+    {
+      "ref": "H1",
+      "value": "M3",
+      "category": "other",
+      "package": "MountingHole_3.2mm_M3_Pad",
+      "kicad_symbol": "Mechanical:MountingHole_Pad",
+      "kicad_footprint": "MountingHole:MountingHole_3.2mm_M3_Pad",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "electrical_type": "input"
+        }
+      ],
+      "pcb_pos": [
+        4,
+        4,
+        0
+      ]
+    },
+    {
+      "ref": "H2",
+      "value": "M3",
+      "category": "other",
+      "package": "MountingHole_3.2mm_M3_Pad",
+      "kicad_symbol": "Mechanical:MountingHole_Pad",
+      "kicad_footprint": "MountingHole:MountingHole_3.2mm_M3_Pad",
+      "pins": [
+        {
+          "number": "1",
+          "name": "1",
+          "electrical_type": "input"
+        }
+      ],
+      "pcb_pos": [
+        60,
+        4,
+        0
+      ]
+    }
+  ],
+  "nets": [
+    {
+      "name": "3V3",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "1"
+        },
+        {
+          "ref": "J1",
+          "pin": "10"
+        },
+        {
+          "ref": "C1",
+          "pin": "1"
+        },
+        {
+          "ref": "R1",
+          "pin": "1"
+        },
+        {
+          "ref": "U1",
+          "pin": "4"
+        },
+        {
+          "ref": "C2",
+          "pin": "1"
+        },
+        {
+          "ref": "C3",
+          "pin": "1"
+        },
+        {
+          "ref": "U2",
+          "pin": "5"
+        },
+        {
+          "ref": "C4",
+          "pin": "1"
+        },
+        {
+          "ref": "R2",
+          "pin": "1"
+        },
+        {
+          "ref": "J2",
+          "pin": "1"
+        },
+        {
+          "ref": "J3",
+          "pin": "1"
+        },
+        {
+          "ref": "U3",
+          "pin": "8"
+        },
+        {
+          "ref": "C6",
+          "pin": "1"
+        },
+        {
+          "ref": "R4",
+          "pin": "1"
+        },
+        {
+          "ref": "R5",
+          "pin": "1"
+        },
+        {
+          "ref": "R6",
+          "pin": "1"
+        },
+        {
+          "ref": "R11",
+          "pin": "1"
+        },
+        {
+          "ref": "R12",
+          "pin": "1"
+        },
+        {
+          "ref": "U4",
+          "pin": "3"
+        },
+        {
+          "ref": "C9",
+          "pin": "1"
+        },
+        {
+          "ref": "R13",
+          "pin": "1"
+        },
+        {
+          "ref": "U5",
+          "pin": "3"
+        },
+        {
+          "ref": "C10",
+          "pin": "1"
+        },
+        {
+          "ref": "R15",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "GND",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "2"
+        },
+        {
+          "ref": "J1",
+          "pin": "9"
+        },
+        {
+          "ref": "C1",
+          "pin": "2"
+        },
+        {
+          "ref": "U1",
+          "pin": "5"
+        },
+        {
+          "ref": "C2",
+          "pin": "2"
+        },
+        {
+          "ref": "C3",
+          "pin": "2"
+        },
+        {
+          "ref": "U2",
+          "pin": "2"
+        },
+        {
+          "ref": "C4",
+          "pin": "2"
+        },
+        {
+          "ref": "C5",
+          "pin": "2"
+        },
+        {
+          "ref": "J2",
+          "pin": "5"
+        },
+        {
+          "ref": "R3",
+          "pin": "2"
+        },
+        {
+          "ref": "U3",
+          "pin": "4"
+        },
+        {
+          "ref": "C6",
+          "pin": "2"
+        },
+        {
+          "ref": "D1",
+          "pin": "1"
+        },
+        {
+          "ref": "D2",
+          "pin": "1"
+        },
+        {
+          "ref": "D3",
+          "pin": "1"
+        },
+        {
+          "ref": "D4",
+          "pin": "1"
+        },
+        {
+          "ref": "J4",
+          "pin": "2"
+        },
+        {
+          "ref": "C7",
+          "pin": "2"
+        },
+        {
+          "ref": "S1",
+          "pin": "2"
+        },
+        {
+          "ref": "C8",
+          "pin": "2"
+        },
+        {
+          "ref": "J5",
+          "pin": "3"
+        },
+        {
+          "ref": "U4",
+          "pin": "2"
+        },
+        {
+          "ref": "C9",
+          "pin": "2"
+        },
+        {
+          "ref": "D5",
+          "pin": "3"
+        },
+        {
+          "ref": "J7",
+          "pin": "3"
+        },
+        {
+          "ref": "U5",
+          "pin": "2"
+        },
+        {
+          "ref": "C10",
+          "pin": "2"
+        },
+        {
+          "ref": "D6",
+          "pin": "3"
+        },
+        {
+          "ref": "H1",
+          "pin": "1"
+        },
+        {
+          "ref": "H2",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "UART_TX",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "3"
+        },
+        {
+          "ref": "U1",
+          "pin": "10"
+        }
+      ]
+    },
+    {
+      "name": "UART_RX",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "4"
+        },
+        {
+          "ref": "U1",
+          "pin": "9"
+        }
+      ]
+    },
+    {
+      "name": "I2C_SDA",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "5"
+        },
+        {
+          "ref": "U1",
+          "pin": "13"
+        }
+      ]
+    },
+    {
+      "name": "I2C_SCL",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "6"
+        },
+        {
+          "ref": "U1",
+          "pin": "14"
+        }
+      ]
+    },
+    {
+      "name": "GUARD_ALERT",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "7"
+        },
+        {
+          "ref": "U1",
+          "pin": "17"
+        }
+      ]
+    },
+    {
+      "name": "GUARD_RST",
+      "connections": [
+        {
+          "ref": "J1",
+          "pin": "8"
+        },
+        {
+          "ref": "R1",
+          "pin": "2"
+        },
+        {
+          "ref": "U2",
+          "pin": "3"
+        }
+      ]
+    },
+    {
+      "name": "CAN_A_TX",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "1"
+        },
+        {
+          "ref": "U4",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "NRST",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "6"
+        },
+        {
+          "ref": "U2",
+          "pin": "1"
+        },
+        {
+          "ref": "R2",
+          "pin": "2"
+        },
+        {
+          "ref": "C5",
+          "pin": "1"
+        },
+        {
+          "ref": "J2",
+          "pin": "4"
+        }
+      ]
+    },
+    {
+      "name": "MAINT_SW",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "7"
+        },
+        {
+          "ref": "R10",
+          "pin": "2"
+        },
+        {
+          "ref": "R11",
+          "pin": "2"
+        },
+        {
+          "ref": "C7",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "TAMPER_SW",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "8"
+        },
+        {
+          "ref": "S1",
+          "pin": "1"
+        },
+        {
+          "ref": "R12",
+          "pin": "2"
+        },
+        {
+          "ref": "C8",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "CAN_A_RS",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "11"
+        },
+        {
+          "ref": "U4",
+          "pin": "8"
+        },
+        {
+          "ref": "R13",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "CAN_B_RS",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "12"
+        },
+        {
+          "ref": "U5",
+          "pin": "8"
+        },
+        {
+          "ref": "R15",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "CAN_B_RX",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "15"
+        },
+        {
+          "ref": "U5",
+          "pin": "4"
+        }
+      ]
+    },
+    {
+      "name": "CAN_B_TX",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "16"
+        },
+        {
+          "ref": "U5",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "WDI",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "18"
+        },
+        {
+          "ref": "U2",
+          "pin": "4"
+        }
+      ]
+    },
+    {
+      "name": "SWDIO",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "24"
+        },
+        {
+          "ref": "J2",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "SWCLK",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "25"
+        },
+        {
+          "ref": "J2",
+          "pin": "3"
+        },
+        {
+          "ref": "R3",
+          "pin": "1"
+        },
+        {
+          "ref": "J3",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "LED_PASS",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "27"
+        },
+        {
+          "ref": "R7",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "LED_BLOCK",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "28"
+        },
+        {
+          "ref": "R8",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "LED_DIAG",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "29"
+        },
+        {
+          "ref": "R9",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "SE_SCL",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "30"
+        },
+        {
+          "ref": "U3",
+          "pin": "6"
+        },
+        {
+          "ref": "R5",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "SE_SDA",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "31"
+        },
+        {
+          "ref": "U3",
+          "pin": "5"
+        },
+        {
+          "ref": "R4",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "CAN_A_RX",
+      "connections": [
+        {
+          "ref": "U1",
+          "pin": "32"
+        },
+        {
+          "ref": "U4",
+          "pin": "4"
+        }
+      ]
+    },
+    {
+      "name": "PWR_A",
+      "connections": [
+        {
+          "ref": "R6",
+          "pin": "2"
+        },
+        {
+          "ref": "D1",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "PASS_A",
+      "connections": [
+        {
+          "ref": "R7",
+          "pin": "2"
+        },
+        {
+          "ref": "D2",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "BLOCK_A",
+      "connections": [
+        {
+          "ref": "R8",
+          "pin": "2"
+        },
+        {
+          "ref": "D3",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "DIAG_A",
+      "connections": [
+        {
+          "ref": "R9",
+          "pin": "2"
+        },
+        {
+          "ref": "D4",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "MAINT_IN",
+      "connections": [
+        {
+          "ref": "J4",
+          "pin": "1"
+        },
+        {
+          "ref": "R10",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "CAN_A_H",
+      "connections": [
+        {
+          "ref": "J5",
+          "pin": "1"
+        },
+        {
+          "ref": "U4",
+          "pin": "7"
+        },
+        {
+          "ref": "D5",
+          "pin": "1"
+        },
+        {
+          "ref": "R14",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "CAN_A_L",
+      "connections": [
+        {
+          "ref": "J5",
+          "pin": "2"
+        },
+        {
+          "ref": "U4",
+          "pin": "6"
+        },
+        {
+          "ref": "D5",
+          "pin": "2"
+        },
+        {
+          "ref": "J6",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "CAN_A_T",
+      "connections": [
+        {
+          "ref": "R14",
+          "pin": "2"
+        },
+        {
+          "ref": "J6",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "CAN_B_H",
+      "connections": [
+        {
+          "ref": "J7",
+          "pin": "1"
+        },
+        {
+          "ref": "U5",
+          "pin": "7"
+        },
+        {
+          "ref": "D6",
+          "pin": "1"
+        },
+        {
+          "ref": "R16",
+          "pin": "1"
+        }
+      ]
+    },
+    {
+      "name": "CAN_B_L",
+      "connections": [
+        {
+          "ref": "J7",
+          "pin": "2"
+        },
+        {
+          "ref": "U5",
+          "pin": "6"
+        },
+        {
+          "ref": "D6",
+          "pin": "2"
+        },
+        {
+          "ref": "J8",
+          "pin": "2"
+        }
+      ]
+    },
+    {
+      "name": "CAN_B_T",
+      "connections": [
+        {
+          "ref": "R16",
+          "pin": "2"
+        },
+        {
+          "ref": "J8",
+          "pin": "1"
+        }
+      ]
+    }
+  ],
+  "board": {
+    "width_mm": 64,
+    "height_mm": 54,
+    "layers": 2,
+    "thickness_mm": 1.6
+  },
+  "constraints": {
+    "trace_width_mm": 0.25,
+    "clearance_mm": 0.2,
+    "via_diameter_mm": 0.8,
+    "via_drill_mm": 0.4
+  }
+}

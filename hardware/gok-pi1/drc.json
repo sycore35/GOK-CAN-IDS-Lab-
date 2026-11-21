@@ -1,0 +1,143 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-22T00:00:45",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.8",
+    "schematic_parity": [
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-CLKOUT{slash}SOF-Pad3)) yoksun",
+            "items": [
+                {
+                    "description": "3 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 111.99,
+                        "y": 71.1925
+                    },
+                    "uuid": "0026f4a5-1acc-4694-b4a3-8f197846482e"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-~{TX0RTS}-Pad4)) yoksun",
+            "items": [
+                {
+                    "description": "4 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 111.99,
+                        "y": 72.4625
+                    },
+                    "uuid": "17dbeccd-1a2c-445b-a575-35e6ed231923"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-~{TX1RTS}-Pad5)) yoksun",
+            "items": [
+                {
+                    "description": "5 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 111.99,
+                        "y": 73.7325
+                    },
+                    "uuid": "b309a771-19cf-4afd-9409-d66e96674ec4"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-~{TX2RTS}-Pad6)) yoksun",
+            "items": [
+                {
+                    "description": "6 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 111.99,
+                        "y": 75.0025
+                    },
+                    "uuid": "80b776d1-1649-47d2-9a22-de21d7b10bdc"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-~{RX1BF}-Pad10)) yoksun",
+            "items": [
+                {
+                    "description": "10 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 121.29,
+                        "y": 78.8125
+                    },
+                    "uuid": "32cd5286-c36c-4ae7-b6c0-255820f97b29"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U1-~{RX0BF}-Pad11)) yoksun",
+            "items": [
+                {
+                    "description": "11 için [<no net>] U1 ayak F.Cu",
+                    "pos": {
+                        "x": 121.29,
+                        "y": 77.5425
+                    },
+                    "uuid": "218849c6-e228-42ef-bfb3-a5d44029e7bb"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "Ped, şematik tarafından verilen ağdan (unconnected-(U2-Vref-Pad5)) yoksun",
+            "items": [
+                {
+                    "description": "5 için [<no net>] U2 ayak F.Cu",
+                    "pos": {
+                        "x": 138.37,
+                        "y": 91.9075
+                    },
+                    "uuid": "381879a6-9680-4710-af6e-b8df0c9f8c15"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        }
+    ],
+    "source": "gok_pi1_socketcan_hat.kicad_pcb",
+    "unconnected_items": [],
+    "violations": []
+}

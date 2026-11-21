@@ -1,0 +1,47 @@
+server:
+  host: "127.0.0.1"
+  port: 8003
+  debug: false
+
+can:
+  bus_mode: "virtual" # Options: "virtual" (in-memory, multi-OS) or "socketcan" (Linux vcan0)
+  interface_name: "vcan0"
+  bitrate_kbps: 500
+  signal_config: "config/can_signals.json"
+
+ids:
+  enable_detection: true
+  rules:
+    whitelist_enabled: true
+    timing_jitter_enabled: true
+    kinematic_delta_enabled: true
+    counter_crc_enabled: true
+    bus_load_enabled: true
+    replay_window_enabled: true
+  thresholds:
+    max_accel_kmh_per_sec: 45.0
+    max_decel_kmh_per_sec: 65.0
+    timing_jitter_tolerance_pct: 80.0
+    bus_load_alert_pct: 75.0
+    replay_duplicate_window_ms: 15.0
+    flood_rate_cap_fps: 400
+    flood_timeout_sec: 3.5
+
+storage:
+  db_path: "data/can_events.db"
+  max_frame_history: 10000
+
+# GÖK-GW1 CAN gateway policy (compiled into firmware/gokguard/policy_generated.h by tools/policy_compiler.py)
+gateway:
+  # IDs the untrusted domain A (OBD / infotainment) may send towards the protected domain B (infotainment-class messages).
+  a_to_b_ids: [0x320, 0x3C0]
+  # Safety-critical IDs: generated only inside domain B, never accepted from A (GW-10).
+  critical_ids: [0x0C4, 0x200, 0x180]
+  # UDS request IDs: pass only while the workshop key is closed (GW-06).
+  uds_request_ids: [0x7DF, 0x7E0, 0x7E1, 0x7E2, 0x7E3, 0x7E4, 0x7E5, 0x7E6, 0x7E7, 0x6F1]
+  # Dangerous UDS services: 0x27 SecurityAccess, 0x2E WriteDataById, 0x31 RoutineControl, 0x34/0x36/0x37 download/transfer/exit, 0x11 ECUReset (GW-07).
+  dangerous_services: [0x27, 0x2E, 0x31, 0x34, 0x36, 0x37, 0x11]
+  per_id_rate_multiplier: 2     # GW-03: allowed rate = multiplier x (1000 / cycle_time_ms)
+  per_id_burst: 4               # GW-03: token bucket depth (frames)
+  total_rate_fps: 200           # GW-08: total A->B frames per second
+  total_burst: 40               # GW-08: token bucket depth (frames)

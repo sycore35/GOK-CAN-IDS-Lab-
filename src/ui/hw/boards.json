@@ -1,0 +1,638 @@
+{
+  "boards": [
+    {
+      "id": "gok-tn1",
+      "name": "GÖK-TN1 OBD Tap Node",
+      "tagline": "Aracı dinle: OBD-II portundaki CAN trafiğini pasif okur, Wi-Fi ile GÖK CAN-IDS Lab'a yollar.",
+      "role": "OBD-II portuna takılan dinleme düğümü: ESP32-S3'ün TWAI denetleyicisi listen-only modunda bus'ı okur; GÖK-GW1 ile 2x5 başlıkla konuşur.",
+      "images": {
+        "top": "hw/gok-tn1_top.png",
+        "bottom": "hw/gok-tn1_bottom.png",
+        "iso": "hw/gok-tn1_iso.png"
+      },
+      "schematic_pdf": "hw/gok-tn1_schematic.pdf",
+      "gerbers_zip": "hw/gok-tn1_gerbers.zip",
+      "features": [
+        "12 V araç girişi: 1 A sigorta, SS34 ters polarite Schottky, SMAJ24A TVS (load dump), R-78B3.3-2.0 DC/DC (3V3 / 2 A)",
+        "ESP32-S3-WROOM-1 (Wi-Fi + dahili TWAI CAN denetleyicisi), anten kart kenarında",
+        "SN65HVD230 CAN alıcı-verici; Rs pini GPIO'dan (yüksek = sürücü kapalı), TXD 10k pull-up (açılışta resesif)",
+        "NUP2105L CAN ESD koruması, jumper'lı 120 Ω sonlandırma",
+        "OBD kablo klemensi: CANH, CANL, 12V, GND",
+        "2x5 istifleme başlığı: 3V3, GND, UART, I2C, GUARD_ALERT, GUARD_RST (GÖK-GW1 ile aynı pin sırası)",
+        "Programlama başlığı, EN/BOOT butonları, PWR / CAN / LINK LED",
+        "2 katman, 84 x 56 mm"
+      ],
+      "bom": [
+        {
+          "ref": "C1",
+          "value": "10uF/50V",
+          "qty": 1
+        },
+        {
+          "ref": "C2",
+          "value": "100nF/50V",
+          "qty": 1
+        },
+        {
+          "ref": "C3",
+          "value": "22uF",
+          "qty": 1
+        },
+        {
+          "ref": "C4,C5,C8",
+          "value": "100nF",
+          "qty": 3
+        },
+        {
+          "ref": "C6",
+          "value": "10uF",
+          "qty": 1
+        },
+        {
+          "ref": "C7",
+          "value": "1uF",
+          "qty": 1
+        },
+        {
+          "ref": "D1",
+          "value": "SS34",
+          "qty": 1
+        },
+        {
+          "ref": "D2",
+          "value": "SMAJ24A",
+          "qty": 1
+        },
+        {
+          "ref": "D3",
+          "value": "LED green PWR",
+          "qty": 1
+        },
+        {
+          "ref": "D4",
+          "value": "LED blue LINK",
+          "qty": 1
+        },
+        {
+          "ref": "D5",
+          "value": "LED yellow CAN",
+          "qty": 1
+        },
+        {
+          "ref": "D6",
+          "value": "NUP2105L",
+          "qty": 1
+        },
+        {
+          "ref": "F1",
+          "value": "1A fast",
+          "qty": 1
+        },
+        {
+          "ref": "H1,H2",
+          "value": "M3",
+          "qty": 2
+        },
+        {
+          "ref": "J1",
+          "value": "OBD CABLE CANH CANL 12V GND",
+          "qty": 1
+        },
+        {
+          "ref": "J2",
+          "value": "PROG TX RX EN IO0 3V3 GND",
+          "qty": 1
+        },
+        {
+          "ref": "J3",
+          "value": "GOK-STACK 2x5",
+          "qty": 1
+        },
+        {
+          "ref": "J4",
+          "value": "TERM CAN 120R",
+          "qty": 1
+        },
+        {
+          "ref": "R1,R4,R5",
+          "value": "1k",
+          "qty": 3
+        },
+        {
+          "ref": "R2,R3,R9,R10,R12",
+          "value": "10k",
+          "qty": 5
+        },
+        {
+          "ref": "R6,R7",
+          "value": "4.7k",
+          "qty": 2
+        },
+        {
+          "ref": "R8",
+          "value": "100k",
+          "qty": 1
+        },
+        {
+          "ref": "R11",
+          "value": "120R",
+          "qty": 1
+        },
+        {
+          "ref": "S1",
+          "value": "EN",
+          "qty": 1
+        },
+        {
+          "ref": "S2",
+          "value": "BOOT",
+          "qty": 1
+        },
+        {
+          "ref": "U1",
+          "value": "R-78B3.3-2.0",
+          "qty": 1
+        },
+        {
+          "ref": "U2",
+          "value": "ESP32-S3-WROOM-1-N8",
+          "qty": 1
+        },
+        {
+          "ref": "U3",
+          "value": "SN65HVD230",
+          "qty": 1
+        }
+      ],
+      "connectors": [
+        {
+          "ref": "J1",
+          "name": "OBD kablo klemensi",
+          "pins": [
+            "1 CANH",
+            "2 CANL",
+            "3 12V",
+            "4 GND"
+          ],
+          "note_tr": "OBD-II kablosuna bağlanır: CANH = J1962 pin 6, CANL = pin 14, 12V = pin 16, GND = pin 4 veya 5. Kablo kartta takılıyken araç beslemesi açık olur; önce GND'yi bağlayın."
+        },
+        {
+          "ref": "J4",
+          "name": "CAN sonlandırma jumper'ı (120 Ω)",
+          "pins": [
+            "1 CAN_T",
+            "2 CANL"
+          ],
+          "note_tr": "Jumper TAKILI = 120 Ω CANH-CANL arasına girer. Araç bus'ında zaten iki uçta sonlandırma vardır; araca takarken jumper'ı ÇIKARIN. Yalnız tezgâhta tek başına denerken takın."
+        },
+        {
+          "ref": "J3",
+          "name": "2x5 istifleme başlığı (GÖK-GW1)",
+          "pins": [
+            "1 3V3",
+            "2 GND",
+            "3 UART_TX",
+            "4 UART_RX",
+            "5 I2C_SDA",
+            "6 I2C_SCL",
+            "7 GUARD_ALERT",
+            "8 GUARD_RST",
+            "9 GND",
+            "10 3V3"
+          ],
+          "note_tr": "GÖK-GW1'in aynı pin sırasındaki başlığına 1:1 flat kablo ile bağlanır; GW1 3V3 beslemesini buradan alır. Pin 1 aynı köşede olmalı."
+        },
+        {
+          "ref": "J2",
+          "name": "Programlama başlığı",
+          "pins": [
+            "1 TX",
+            "2 RX",
+            "3 EN",
+            "4 IO0",
+            "5 3V3",
+            "6 GND"
+          ],
+          "note_tr": "USB-UART dönüştürücüyü (3.3 V) bağlayın: dönüştürücü RX -> TX, TX -> RX. Yazılım yüklemek için BOOT butonuna basılı tutup EN'e basın."
+        },
+        {
+          "ref": "S1",
+          "name": "EN (reset) butonu",
+          "pins": [
+            "EN",
+            "GND"
+          ],
+          "note_tr": "Kartı yeniden başlatır."
+        },
+        {
+          "ref": "S2",
+          "name": "BOOT butonu",
+          "pins": [
+            "IO0",
+            "GND"
+          ],
+          "note_tr": "Basılıyken reset yapılırsa ESP32-S3 yükleme moduna girer."
+        }
+      ],
+      "stats": {
+        "components": 38,
+        "nets": 26,
+        "width_mm": 84.0,
+        "height_mm": 56.0,
+        "layers": 2,
+        "routed_pct": 100.0,
+        "drc_errors": 0,
+        "erc_errors": 0,
+        "drc_warnings": 32
+      }
+    },
+    {
+      "id": "gok-gw1",
+      "name": "GÖK-GW1 Secure CAN Gateway",
+      "tagline": "Domainleri ayır, koru: iki CAN ağı arasında politika uygulayan hat içi güvenlik duvarı + donanım güven kökü.",
+      "role": "Bump-in-the-wire CAN güvenlik duvarı: Port A (güvenilmez: OBD / bilgi-eğlence) ile Port B (korunan: motor, fren, direksiyon) arasındaki trafiği GW-01..GW-10 kurallarıyla süzer, olayları imzalar.",
+      "images": {
+        "top": "hw/gok-gw1_top.png",
+        "bottom": "hw/gok-gw1_bottom.png",
+        "iso": "hw/gok-gw1_iso.png"
+      },
+      "schematic_pdf": "hw/gok-gw1_schematic.pdf",
+      "gerbers_zip": "hw/gok-gw1_gerbers.zip",
+      "features": [
+        "STM32G0B1KBT6 (Cortex-M0+, LQFP-32, 2x FDCAN): GÖK-Guard politika motoru",
+        "2x SN65HVD230 CAN alıcı-verici: Port A = güvenilmez domain, Port B = korunan domain",
+        "Her portta NUP2105L ESD koruması ve jumper'lı 120 Ω sonlandırma",
+        "Transceiver Rs pinleri 10k pull-up: MCU reset'teyken iki sürücü de kapalı (fail-closed)",
+        "ATECC608A secure element (I2C1): cihaz kimliği, imzalı politika, olay HMAC'i",
+        "TPS3823 watchdog/supervisor: firmware kilitlenirse NRST; GÖK-TN1 GUARD_RST ile uzaktan reset",
+        "Atölye (diagnostik) anahtarı klemensi: UDS oturumu / flash yalnız anahtar kapalıyken geçer",
+        "Tamper anahtarı: kapak açılırsa olay + kilit modu (GW-09)",
+        "PWR / PASS / BLOCK / DIAG LED, SWD başlığı, BOOT0 jumper'ı",
+        "2x5 istifleme başlığı (GÖK-TN1 ile aynı pin sırası, 3V3 oradan)",
+        "2 katman, 64 x 54 mm"
+      ],
+      "bom": [
+        {
+          "ref": "C1",
+          "value": "10uF",
+          "qty": 1
+        },
+        {
+          "ref": "C2,C4-C10",
+          "value": "100nF",
+          "qty": 8
+        },
+        {
+          "ref": "C3",
+          "value": "4.7uF",
+          "qty": 1
+        },
+        {
+          "ref": "D1",
+          "value": "LED green PWR",
+          "qty": 1
+        },
+        {
+          "ref": "D2",
+          "value": "LED green PASS",
+          "qty": 1
+        },
+        {
+          "ref": "D3",
+          "value": "LED red BLOCK",
+          "qty": 1
+        },
+        {
+          "ref": "D4",
+          "value": "LED yellow DIAG",
+          "qty": 1
+        },
+        {
+          "ref": "D5,D6",
+          "value": "NUP2105L",
+          "qty": 2
+        },
+        {
+          "ref": "H1,H2",
+          "value": "M3",
+          "qty": 2
+        },
+        {
+          "ref": "J1",
+          "value": "GOK-STACK 2x5",
+          "qty": 1
+        },
+        {
+          "ref": "J2",
+          "value": "SWD",
+          "qty": 1
+        },
+        {
+          "ref": "J3",
+          "value": "BOOT0 jumper",
+          "qty": 1
+        },
+        {
+          "ref": "J4",
+          "value": "WORKSHOP KEY",
+          "qty": 1
+        },
+        {
+          "ref": "J5",
+          "value": "PORT A CANH CANL GND",
+          "qty": 1
+        },
+        {
+          "ref": "J6",
+          "value": "TERM CAN_A 120R",
+          "qty": 1
+        },
+        {
+          "ref": "J7",
+          "value": "PORT B CANH CANL GND",
+          "qty": 1
+        },
+        {
+          "ref": "J8",
+          "value": "TERM CAN_B 120R",
+          "qty": 1
+        },
+        {
+          "ref": "R1-R3,R11-R13,R15",
+          "value": "10k",
+          "qty": 7
+        },
+        {
+          "ref": "R4,R5",
+          "value": "4.7k",
+          "qty": 2
+        },
+        {
+          "ref": "R6-R10",
+          "value": "1k",
+          "qty": 5
+        },
+        {
+          "ref": "R14,R16",
+          "value": "120R",
+          "qty": 2
+        },
+        {
+          "ref": "S1",
+          "value": "TAMPER",
+          "qty": 1
+        },
+        {
+          "ref": "U1",
+          "value": "STM32G0B1KBT6",
+          "qty": 1
+        },
+        {
+          "ref": "U2",
+          "value": "TPS3823-33",
+          "qty": 1
+        },
+        {
+          "ref": "U3",
+          "value": "ATECC608A-SSHDA",
+          "qty": 1
+        },
+        {
+          "ref": "U4,U5",
+          "value": "SN65HVD230",
+          "qty": 2
+        }
+      ],
+      "connectors": [
+        {
+          "ref": "J5",
+          "name": "Port A (güvenilmez domain)",
+          "pins": [
+            "1 CAN_A_H",
+            "2 CAN_A_L",
+            "3 GND"
+          ],
+          "note_tr": "OBD-II / bilgi-eğlence tarafındaki CAN hattı buraya bağlanır. Saldırganın erişebildiği taraf budur; GW1 bu yönden gelen çerçeveleri denetler."
+        },
+        {
+          "ref": "J7",
+          "name": "Port B (korunan domain)",
+          "pins": [
+            "1 CAN_B_H",
+            "2 CAN_B_L",
+            "3 GND"
+          ],
+          "note_tr": "Motor / fren / direksiyon ECU'larının CAN hattı buraya bağlanır. Kart araca hat içine girer: iki domain arasında başka bağlantı olmamalıdır."
+        },
+        {
+          "ref": "J6",
+          "name": "Port A sonlandırma jumper'ı (120 Ω)",
+          "pins": [
+            "1 CAN_A_T",
+            "2 CAN_A_L"
+          ],
+          "note_tr": "Port A hattının ucundaysanız takın; hat ortasındaysa çıkarın."
+        },
+        {
+          "ref": "J8",
+          "name": "Port B sonlandırma jumper'ı (120 Ω)",
+          "pins": [
+            "1 CAN_B_T",
+            "2 CAN_B_L"
+          ],
+          "note_tr": "Port B hattının ucundaysanız takın; hat ortasındaysa çıkarın."
+        },
+        {
+          "ref": "J4",
+          "name": "Atölye anahtarı klemensi",
+          "pins": [
+            "1 MAINT_IN",
+            "2 GND"
+          ],
+          "note_tr": "Harici anahtarı (kilitli, anahtarlı tip önerilir) bağlayın. Kapalı (GND'ye kısa) = atölye modu: UDS oturumu ve flash isteklerine izin verilir (GW-06/07). Açık = tehlikeli UDS DROP."
+        },
+        {
+          "ref": "S1",
+          "name": "Tamper anahtarı",
+          "pins": [
+            "TAMPER_SW",
+            "GND"
+          ],
+          "note_tr": "Kutu kapağı kapalıyken basılı (LOW) kalmalıdır; kapak açılırsa HIGH olur, GW1 olay üretir ve kilit moduna geçer (GW-09)."
+        },
+        {
+          "ref": "J1",
+          "name": "2x5 istifleme başlığı (GÖK-TN1)",
+          "pins": [
+            "1 3V3",
+            "2 GND",
+            "3 UART_TX",
+            "4 UART_RX",
+            "5 I2C_SDA",
+            "6 I2C_SCL",
+            "7 GUARD_ALERT",
+            "8 GUARD_RST",
+            "9 GND",
+            "10 3V3"
+          ],
+          "note_tr": "GÖK-TN1'in başlığına 1:1 flat kablo ile bağlanır. GW1'in 3V3 beslemesi buradan gelir; TN1 yoksa SWD başlığının 3V3 pininden besleyin. UART/I2C üzerinden olay kaydı TN1'e iletilir."
+        },
+        {
+          "ref": "J2",
+          "name": "SWD başlığı",
+          "pins": [
+            "1 3V3",
+            "2 SWDIO",
+            "3 SWCLK",
+            "4 NRST",
+            "5 GND"
+          ],
+          "note_tr": "ST-LINK ile firmware yüklemek için. Tezgâhta GW1'i bu başlıktan 3V3 vererek de çalıştırabilirsiniz."
+        },
+        {
+          "ref": "J3",
+          "name": "BOOT0 jumper'ı",
+          "pins": [
+            "1 3V3",
+            "2 SWCLK/BOOT0"
+          ],
+          "note_tr": "Normalde ÇIKARIK (flash'tan açılış). Sistem bootloader'ına girmek için takıp reset yapın."
+        }
+      ],
+      "stats": {
+        "components": 48,
+        "nets": 36,
+        "width_mm": 64.0,
+        "height_mm": 54.0,
+        "layers": 2,
+        "routed_pct": 100.0,
+        "drc_errors": 0,
+        "erc_errors": 0,
+        "drc_warnings": 24
+      }
+    },
+    {
+      "id": "gok-pi1",
+      "name": "GÖK-PI1 SocketCAN HAT",
+      "tagline": "Raspberry Pi'ye gerçek CAN: MCP2515 + SN65HVD230, Linux'ta can0 olarak görünür.",
+      "role": "SocketCAN arayüz kartı: Raspberry Pi SPI'sine bağlanır, bu repodaki SocketCAN köprüsü simülatör karelerini gerçek bus'a yazar, bus'tan gelenleri IDS'e verir.",
+      "images": {
+        "top": "hw/gok-pi1_top.png",
+        "bottom": "hw/gok-pi1_bottom.png",
+        "iso": "hw/gok-pi1_iso.png"
+      },
+      "schematic_pdf": "hw/gok-pi1_schematic.pdf",
+      "gerbers_zip": "hw/gok-pi1_gerbers.zip",
+      "features": [
+        "MCP2515 SPI CAN denetleyicisi, 8 MHz kristal",
+        "SN65HVD230 3.3 V CAN alıcı-verici, jumper'lı 120 Ω sonlandırma",
+        "dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=25 ile can0",
+        "3 pinli CAN klemensi (CANH, CANL, GND)",
+        "2 katman, 45 x 43 mm"
+      ],
+      "bom": [
+        {
+          "ref": "C1,C2",
+          "value": "100nF",
+          "qty": 2
+        },
+        {
+          "ref": "C3",
+          "value": "10uF",
+          "qty": 1
+        },
+        {
+          "ref": "C4,C5",
+          "value": "22pF",
+          "qty": 2
+        },
+        {
+          "ref": "J1",
+          "value": "RPI_SPI",
+          "qty": 1
+        },
+        {
+          "ref": "J2",
+          "value": "CAN_BUS",
+          "qty": 1
+        },
+        {
+          "ref": "JP1",
+          "value": "TERM_120R",
+          "qty": 1
+        },
+        {
+          "ref": "R1",
+          "value": "10k",
+          "qty": 1
+        },
+        {
+          "ref": "R2",
+          "value": "120",
+          "qty": 1
+        },
+        {
+          "ref": "U1",
+          "value": "MCP2515",
+          "qty": 1
+        },
+        {
+          "ref": "U2",
+          "value": "SN65HVD230",
+          "qty": 1
+        },
+        {
+          "ref": "Y1",
+          "value": "8MHz",
+          "qty": 1
+        }
+      ],
+      "connectors": [
+        {
+          "ref": "J1",
+          "name": "Raspberry Pi SPI başlığı",
+          "pins": [
+            "1 3V3",
+            "2 GND",
+            "3 MOSI",
+            "4 MISO",
+            "5 SCLK",
+            "6 CE0",
+            "7 CAN_INT"
+          ],
+          "note_tr": "Pi'nin 3V3 (pin 1), GND, MOSI (GPIO10), MISO (GPIO9), SCLK (GPIO11), CE0 (GPIO8) ve INT (GPIO25) pinlerine kablolayın. /boot/config.txt'e dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=25 ekleyin, sudo ip link set can0 up type can bitrate 500000."
+        },
+        {
+          "ref": "J2",
+          "name": "CAN bus",
+          "pins": [
+            "1 CANH",
+            "2 CANL",
+            "3 GND"
+          ],
+          "note_tr": "Araç / bench CAN hattına bağlanır (CANH-CANH, CANL-CANL, GND ortak)."
+        },
+        {
+          "ref": "JP1",
+          "name": "120 Ω sonlandırma jumper'ı",
+          "pins": [
+            "1 CAN_TERM",
+            "2 CANL"
+          ],
+          "note_tr": "Hattın ucundaysanız takın; araç bus'ında genelde çıkarık bırakın."
+        }
+      ],
+      "stats": {
+        "components": 13,
+        "nets": 15,
+        "width_mm": 45.0,
+        "height_mm": 43.03,
+        "layers": 2,
+        "routed_pct": 100.0,
+        "drc_errors": 0,
+        "erc_errors": 0,
+        "drc_warnings": 7
+      }
+    }
+  ]
+}

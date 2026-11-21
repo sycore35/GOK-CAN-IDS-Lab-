@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0E0E10">
+  <title>GÖK CAN-IDS Lab — Sanal Test Tezgâhı</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="vehicle.css">
+  <link rel="stylesheet" href="car3d.css">
+</head>
+<body>
+<!-- Lucide ikonları (satır içi sprite) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-octagon" viewBox="0 0 24 24"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+    <symbol id="i-square" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+    <symbol id="i-disc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">İçeriğe geç</a>
+
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true"><svg class="ico"><use href="#i-activity"/></svg></span>
+    <div class="brand-t"><h1>GÖK CAN-IDS Lab</h1><span class="sub">Sanal araç ağı test tezgâhı</span></div>
+  </div>
+  <div class="status" aria-label="Sistem durumu">
+    <div class="seg"><span class="k">Veri yolu</span><span class="v">Sanal CAN · 500 kbit/s</span></div>
+    <div class="seg"><span class="k">Bus yükü</span><span class="v mono" id="busLoadVal">—</span></div>
+    <div class="seg hide-sm"><span class="k">Senaryo</span><span class="v" id="scenarioVal">Normal sürüş</span></div>
+    <div class="seg hide-sm"><span class="k">Benzetim saati</span><span class="v mono" id="simClock">00:00,0</span></div>
+    <div class="seg" id="alarmSeg"><span class="k">Aktif alarm</span><span class="v mono" id="alarmCount">0</span></div>
+    <div class="seg"><span class="k">Bağlantı</span><span class="v"><i class="dot" id="wsDot"></i><span id="wsState">Bağlanıyor</span></span></div>
+  </div>
+  <div class="actions">
+    <button class="ibtn" id="pauseBtn" type="button" aria-label="Benzetimi duraklat" title="Benzetimi duraklat"><svg class="ico"><use href="#i-pause"/></svg></button>
+    <button class="ibtn" id="themeBtn" type="button" aria-label="Temayı değiştir" title="Temayı değiştir"><svg class="ico"><use href="#i-sun"/></svg></button>
+    <button class="btn danger" id="stopBtn" type="button" title="Çalışan tüm saldırıları durdur"><svg class="ico"><use href="#i-octagon"/></svg><span>Acil durdur</span></button>
+  </div>
+</header>
+
+<div class="alarmband" id="alarmBand" role="status" aria-live="polite">
+  <svg class="ico"><use href="#i-shield"/></svg><span class="ab-text" id="alarmBandText">Alarm yok — 7 IDS katmanı ve davranış analizi izliyor.</span><span class="ab-age mono" id="alarmBandAge"></span>
+</div>
+
+<nav class="tabs" role="tablist" aria-label="Modüller" id="tabs">
+  <button role="tab" aria-selected="true" aria-controls="p-dash" id="t-dash">Pano</button>
+  <button role="tab" aria-selected="false" aria-controls="p-veh" id="t-veh">Araç Ağı</button>
+  <button role="tab" aria-selected="false" aria-controls="p-car3d" id="t-car3d">3B Araç</button>
+  <button role="tab" aria-selected="false" aria-controls="p-bus" id="t-bus">Bus İzleme</button>
+  <button role="tab" aria-selected="false" aria-controls="p-attack" id="t-attack">Saldırı Lab</button>
+  <button role="tab" aria-selected="false" aria-controls="p-atlas" id="t-atlas">Saldırı Atlası</button>
+  <button role="tab" aria-selected="false" aria-controls="p-behavior" id="t-behavior">Araç Davranışı</button>
+  <button role="tab" aria-selected="false" aria-controls="p-dbc" id="t-dbc">DBC Editörü</button>
+  <button role="tab" aria-selected="false" aria-controls="p-rules" id="t-rules">Kural Tasarımcısı</button>
+  <button role="tab" aria-selected="false" aria-controls="p-bench" id="t-bench">Benchmark</button>
+  <button role="tab" aria-selected="false" aria-controls="p-cov" id="t-cov">Kapsam</button>
+  <button role="tab" aria-selected="false" aria-controls="p-hw" id="t-hw">Donanım</button>
+  <button role="tab" aria-selected="false" aria-controls="p-integ" id="t-integ">SocketCAN · CAN FD · UDS</button>
+</nav>
+
+<main id="main">
+  <!-- 1. PANO -->
+  <section id="p-dash" class="page" role="tabpanel" aria-labelledby="t-dash">
+    <div class="dash">
+      <div class="panel cluster-panel">
+        <div class="panel-h"><h2>Gösterge paneli</h2><span class="hint-r">CAN verisinden canlı</span></div>
+        <div class="cluster">
+          <div class="dial-cell" id="dialSpeed"></div>
+          <div class="center-cell">
+            <div class="gearbox" id="gearBox" aria-label="Vites"></div>
+            <div class="lamps" id="lamps"></div>
+            <div class="kv-mini"><span>Gösterge hızı</span><b class="mono" id="clusterSpd">—</b></div>
+            <div class="kv-mini"><span>Gerçek hız</span><b class="mono" id="trueSpd">—</b></div>
+            <div class="kv-mini"><span>Toplam yol</span><b class="mono" id="odoVal">—</b></div>
+            <div class="spoofnote" id="spoofNote" hidden>Gösterge hızı gerçek hızdan sapıyor</div>
+          </div>
+          <div class="dial-cell" id="dialRpm"></div>
+        </div>
+        <div class="minis">
+          <div class="mini" id="dialBrake"></div>
+          <div class="mini" id="dialTemp"></div>
+          <div class="mini" id="dialSteer"></div>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="panel feed-panel">
+          <div class="panel-h"><h2>Güvenlik alarmları</h2><span class="count" id="alertCountBadge">0</span></div>
+          <div id="alertFeed" class="alert-feed" aria-live="polite"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><h2>Sürücü girdileri</h2></div>
+          <div class="seg-ctl" role="radiogroup" aria-label="Sürüş modu">
+            <button type="button" role="radio" aria-checked="true" data-mode="auto">Otomatik döngü</button>
+            <button type="button" role="radio" aria-checked="false" data-mode="manual">Manuel</button>
+          </div>
+          <label class="fld"><span>Hedef hız (km/h)</span><input id="drvTarget" type="number" min="0" max="200" placeholder="Döngü hızı"></label>
+          <div class="sliders" id="manualCtl">
+            <label class="sl"><span class="sl-h"><span>Gaz</span><output id="oThr">0 %</output></span><input id="drvThr" type="range" min="0" max="100" value="0"></label>
+            <label class="sl"><span class="sl-h"><span>Fren</span><output id="oBrk">0 %</output></span><input id="drvBrk" type="range" min="0" max="100" value="0"></label>
+            <label class="sl"><span class="sl-h"><span>Direksiyon</span><output id="oStr">0°</output></span><input id="drvStr" type="range" min="-90" max="90" value="0"></label>
+          </div>
+          <p class="note">Fizik zinciri: motor torku, vites oranı, tekerlek kuvveti, ivme. Devir, hız ve vitesten türetilir. Kaydırıcılar yalnızca manuel modda etkilidir.</p>
+        </div>
+      </div>
+
+      <div class="panel load-panel">
+        <div class="panel-h"><h2>Bus yükü</h2><span class="hint-r"><b class="mono" id="loadNow">—</b> şu an · <span id="busHealthBadge" class="tag">Normal</span></span></div>
+        <div id="loadChart" class="chart"></div>
+        <div class="chart-foot"><span>Toplam kare <b class="mono" id="totalFramesVal">0</b></span><span>Tepe <b class="mono" id="loadPeak">—</b></span><span class="legend"><i class="lg thr"></i>Doygunluk eşiği %75</span></div>
+      </div>
+      <div class="panel trace-panel">
+        <div class="panel-h"><h2>Canlı kare akışı</h2><a class="link" href="#bus" data-goto="bus">Tam izleme</a></div>
+        <div class="tw"><table class="mono dense mini"><thead><tr><th>t (s)</th><th>ID</th><th>Kaynak</th><th>Veri</th></tr></thead><tbody id="miniTrace"></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. BUS İZLEME -->
+  <section id="p-veh" class="page" role="tabpanel" aria-labelledby="t-veh" hidden></section>
+  <section id="p-car3d" class="page" role="tabpanel" aria-labelledby="t-car3d" hidden></section>
+  <section id="p-bus" class="page" role="tabpanel" aria-labelledby="t-bus" hidden>
+    <div class="stats" id="busStats"></div>
+    <div class="bus-grid">
+      <div class="panel ecu-panel">
+        <div class="panel-h"><h2>Sanal ECU’lar</h2><span class="hint-r">Çevrimdışı yaparak arıza dene</span></div>
+        <div class="tw"><table class="dense"><thead><tr><th>ECU</th><th>Mesajlar</th><th class="r">TX</th><th class="r">Arb. kaybı</th><th class="r">Düşen</th><th>Durum</th></tr></thead><tbody id="ecuBody"></tbody></table></div>
+      </div>
+      <div class="panel trace-big">
+        <div class="panel-h"><h2>Kare izi</h2>
+          <div class="tools">
+            <label class="search"><svg class="ico"><use href="#i-search"/></svg><input id="traceFilter" placeholder="ID süz (örn. 244)" maxlength="8" aria-label="ID filtresi (hex)"></label>
+            <button class="btn" id="traceFreeze" type="button" aria-pressed="false"><svg class="ico"><use href="#i-pause"/></svg><span>Dondur</span></button>
+          </div>
+        </div>
+        <div class="trace-split">
+          <div class="tw tall"><table class="mono dense trace"><thead><tr><th>t (s)</th><th>ID</th><th>Ad</th><th class="r">DLC</th><th>Veri</th><th>Sinyal</th><th class="r">Gecikme</th><th>Kaynak</th></tr></thead><tbody id="traceBody"></tbody></table></div>
+          <aside class="detail" id="traceDetail"><div class="empty-s">Bir kareyi seç: çözümlenmiş sinyaller ve bit düzeni burada görünür.</div></aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SALDIRI LAB -->
+  <section id="p-attack" class="page" role="tabpanel" aria-labelledby="t-attack" hidden>
+    <p class="notice"><svg class="ico"><use href="#i-info"/></svg>Tüm saldırılar yalnızca bu uygulamanın sanal CAN veri yolunda çalışır; gerçek araç veya ağ hedeflenmez.</p>
+    <div class="atk-grid">
+      <div class="atk-left">
+        <div class="toolbar">
+          <label class="fld inline"><span>Süre (sn)</span><input id="atkDur" type="number" min="0.5" max="60" step="0.5" value="6"></label>
+          <label class="chk"><input type="checkbox" id="atkCombine"><span>Birleştir (mevcut saldırıyı durdurma)</span></label>
+          <button class="btn" id="atkStop" type="button"><svg class="ico"><use href="#i-square"/></svg><span>Durdur</span></button>
+        </div>
+        <div id="attackList" class="atk-cards" role="radiogroup" aria-label="Saldırı seçimi"></div>
+        <details class="adv"><summary>Seçili senaryonun parametreleri (JSON)</summary><textarea id="atkParams" rows="4" spellcheck="false" aria-label="Saldırı parametreleri"></textarea></details>
+      </div>
+      <aside class="atk-right">
+        <div class="panel">
+          <div class="panel-h"><h2>Canlı etki</h2><span class="tag" id="atkLiveTag">Beklemede</span></div>
+          <div class="live-view">
+            <div id="dialSpeedAtk" class="atk-dial"></div>
+            <div class="live-kv">
+              <div><span>Gerçek hız</span><b class="mono" id="aTrue">—</b></div>
+              <div><span>Gösterge hızı</span><b class="mono" id="aClu">—</b></div>
+              <div><span>Bus yükü</span><b class="mono" id="aLoad">—</b></div>
+              <div><span>Sapma</span><b class="mono" id="aErr">—</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel"><div class="panel-h"><h2>Canlı alarmlar</h2><span class="count" id="atkAlertCount">0</span></div><div id="alertFeedAtk" class="alert-feed short" aria-live="off"></div></div>
+        <div class="panel"><div class="panel-h"><h2>Sonuçlar</h2></div><div id="attackStatus" class="results"></div></div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 4. ARAÇ DAVRANIŞI -->
+  <section id="p-atlas" class="page" role="tabpanel" aria-labelledby="t-atlas" hidden></section>
+  <section id="p-behavior" class="page" role="tabpanel" aria-labelledby="t-behavior" hidden>
+    <p class="notice"><svg class="ico"><use href="#i-info"/></svg>Tek tek kareler geçerli görünse bile fiziksel olarak imkânsız sinyal birleşimlerini yakalar; örneğin gaz 0 ve fren basılıyken hızın artması.</p>
+    <div class="beh-grid">
+      <div class="panel">
+        <div class="panel-h"><h2>Fiziksel tutarlılık kuralları</h2><span class="hint-r">Sinyallerin birbiriyle uyumunu denetler</span></div>
+        <div id="vbaRules" class="vba"></div>
+        <p class="note">Denemek için Saldırı Lab’da “Sahte fren basıncı” veya “Hız maskeleme” senaryosunu başlat.</p>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><h2>Davranış alarmları</h2><span class="count" id="vbaCount">0</span></div>
+        <div id="vbaFeed" class="alert-feed"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DBC EDİTÖRÜ -->
+  <section id="p-dbc" class="page" role="tabpanel" aria-labelledby="t-dbc" hidden>
+    <div class="dbc-grid">
+      <aside class="panel msgs">
+        <div class="panel-h"><h2>Mesajlar</h2><span class="count" id="dbcCount">0</span></div>
+        <label class="search wide"><svg class="ico"><use href="#i-search"/></svg><input id="dbcSearch" placeholder="Mesaj ara" aria-label="Mesaj ara"></label>
+        <div id="dbcMsgs" class="msg-list" role="listbox" aria-label="DBC mesajları"></div>
+        <details class="adv" id="msgAdd">
+          <summary>Mesaj ekle / güncelle</summary>
+          <form id="msgForm" class="formgrid">
+            <label class="fld"><span>ID (hex/dec)</span><input name="id" required placeholder="0x300"></label>
+            <label class="fld"><span>Ad</span><input name="name" required pattern="[A-Za-z_][A-Za-z0-9_]*"></label>
+            <label class="fld"><span>DLC</span><input name="dlc" type="number" min="0" max="64" value="8"></label>
+            <label class="fld"><span>Periyot (ms)</span><input name="cycle" type="number" min="0" value="100"></label>
+            <label class="fld wide"><span>Gönderen</span><input name="tx" value="ECU_X"></label>
+            <div class="row wide"><button class="btn primary" type="submit"><svg class="ico"><use href="#i-check"/></svg><span>Kaydet</span></button><button class="btn danger" type="button" id="msgDel"><svg class="ico"><use href="#i-trash"/></svg><span>Mesajı sil</span></button></div>
+          </form>
+        </details>
+      </aside>
+      <div class="dbc-main">
+        <div class="panel">
+          <div class="panel-h"><h2 id="dbcTitle">Bit düzeni</h2><span class="hint-r" id="dbcMeta">—</span></div>
+          <div class="bitwrap"><div id="bitGrid" class="bitgrid" aria-label="Bit düzeni ızgarası"></div><div id="bitLegend" class="bitlegend"></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-h"><h2>Sinyaller</h2><span class="hint-r">Satırı düzenleyip ✓ ile kaydet</span></div>
+          <div class="tw"><table class="sigtbl dense"><thead><tr><th>Ad</th><th>Başl.</th><th>Uzun.</th><th>Bayt sırası</th><th>İşaretli</th><th>Çarpan</th><th>Ofset</th><th>Min</th><th>Maks</th><th>Birim</th><th></th></tr></thead><tbody id="sigBody"></tbody></table></div>
+        </div>
+        <div class="two">
+          <div class="panel">
+            <div class="panel-h"><h2>Çözümleme testi</h2></div>
+            <div class="row"><input id="decHex" class="grow mono" placeholder="Veri (hex), örn. 0A 00 00 00" aria-label="Veri hex"><button class="btn" id="decBtn" type="button">Çöz</button></div>
+            <pre id="decOut" class="out">Sonuç burada görünür.</pre>
+          </div>
+          <div class="panel">
+            <div class="panel-h"><h2>.dbc içe / dışa aktar</h2></div>
+            <textarea id="dbcText" rows="5" class="mono" spellcheck="false" aria-label="DBC metni" placeholder="Dışa aktar ile mevcut DBC metnini getir veya buraya yapıştır."></textarea>
+            <div class="row wrap"><button class="btn" id="dbcExport" type="button"><svg class="ico"><use href="#i-download"/></svg><span>Metni getir</span></button><button class="btn primary" id="dbcImport" type="button"><svg class="ico"><use href="#i-upload"/></svg><span>İçe aktar</span></button><button class="btn" id="dbcReset" type="button"><svg class="ico"><use href="#i-reset"/></svg><span>Varsayılana dön</span></button><a class="btn" id="dbcDownload" download="lab.dbc" href="#"><svg class="ico"><use href="#i-download"/></svg><span>İndir</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. KURAL TASARIMCISI -->
+  <section id="p-rules" class="page" role="tabpanel" aria-labelledby="t-rules" hidden>
+    <div class="rules-grid">
+      <div class="panel">
+        <div class="panel-h"><h2>Yerleşik IDS katmanları</h2><span class="hint-r">Açıp kapatarak etkisini gör</span></div>
+        <div id="layerList" class="layers"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><h2>Özel kurallar</h2><span class="hint-r">Kalıcı, canlı uygulanır</span></div>
+        <div class="tw short"><table class="dense"><thead><tr><th>ID</th><th>Ad</th><th>Tür</th><th>Önem</th><th class="r">Vuruş</th><th></th></tr></thead><tbody id="ruleBody"></tbody></table></div>
+      </div>
+      <div class="panel wide-p">
+        <div class="panel-h"><h2>Yeni kural tasarla</h2></div>
+        <form id="ruleForm" class="formgrid">
+          <label class="fld"><span>Ad</span><input name="name" required></label>
+          <label class="fld"><span>Tür</span><select name="type" id="ruleType">
+            <option value="signal_threshold">Sinyal eşiği</option><option value="signal_delta">Sinyal değişimi</option>
+            <option value="rate">Kare hızı</option><option value="payload_match">Yük deseni</option><option value="dlc_mismatch">DLC uyumsuzluğu</option></select></label>
+          <label class="fld"><span>CAN ID (boş = hepsi)</span><input name="arb_id" placeholder="0x244"></label>
+          <label class="fld"><span>Önem</span><select name="severity"><option value="LOW">Düşük</option><option value="MEDIUM" selected>Orta</option><option value="HIGH">Yüksek</option><option value="CRITICAL">Kritik</option></select></label>
+          <div id="ruleDyn" class="formgrid inner"></div>
+          <label class="fld wide"><span>Açıklama / önlem</span><input name="description"></label>
+          <div class="row wide"><button class="btn primary" type="submit"><svg class="ico"><use href="#i-check"/></svg><span>Kaydet</span></button></div>
+        </form>
+        <div class="tester">
+          <h3>Kuralı dene</h3>
+          <div class="row wrap"><input id="rtId" placeholder="CAN ID" size="8" aria-label="Test kare ID"><input id="rtHex" placeholder="Veri (hex)" class="mono grow" aria-label="Test kare verisi"><button class="btn" id="ruleTest" type="button">Dene</button></div>
+          <p id="ruleTestOut" class="note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. BENCHMARK -->
+  <section id="p-bench" class="page" role="tabpanel" aria-labelledby="t-bench" hidden>
+    <div class="panel">
+      <div class="panel-h"><h2>Tespit benchmark’ı</h2><span class="hint-r">Etiketli simülasyon senaryoları</span></div>
+      <div class="row wrap bench-ctl">
+        <label class="fld inline"><span>Seed</span><input id="bSeed" type="number" value="1"></label>
+        <label class="fld inline"><span>Süre (sn)</span><input id="bDur" type="number" value="8" min="4" max="30"></label>
+        <label class="fld inline"><span>Saldırı başlangıcı (sn)</span><input id="bStart" type="number" value="2" step="0.5"></label>
+        <label class="fld inline"><span>Saldırı süresi (sn)</span><input id="bLen" type="number" value="4" step="0.5"></label>
+        <button class="btn primary" id="bRun" type="button"><svg class="ico"><use href="#i-play"/></svg><span>Çalıştır</span></button><span id="bStage" class="hint-r" aria-live="polite"></span>
+      </div>
+      <p class="note">TPR ve FPR kare düzeyindedir, yalnızca simülatör verisinde ölçülür; gecikme bu makinedeki işlem süresidir. Her katman tek başına açıkken ölçülür.</p>
+    </div>
+    <div id="benchOut"></div>
+  </section>
+
+  <section id="p-cov" class="page" role="tabpanel" aria-labelledby="t-cov" hidden>
+    <div class="panel"><div class="panel-h"><h2>Kapsam: hangi saldırıyı kim yakalar?</h2><button class="btn primary" id="covRun" type="button"><svg class="ico"><use href="#i-play"/></svg><span>Kapsam testini çalıştır</span></button></div>
+      <p class="intro">Her saldırı ayrı ayrı oynatılır; IDS katmanlarının tetiklenip tetiklenmediği ve GÖK-GW1 kurallarının kaç kareyi düşüreceği ölçülür.</p></div>
+    <div id="covBody"></div>
+  </section>
+  <section id="p-hw" class="page" role="tabpanel" aria-labelledby="t-hw" hidden></section>
+  <!-- 8. ENTEGRASYON -->
+  <section id="p-integ" class="page" role="tabpanel" aria-labelledby="t-integ" hidden>
+    <div class="integ-grid">
+      <div class="panel"><div class="panel-h"><h2>SocketCAN (vcan0 / can0)</h2></div><div id="scStatus"></div><div class="row"><button class="btn" id="scProbe" type="button"><svg class="ico"><use href="#i-reset"/></svg><span>Yeniden dene</span></button></div></div>
+      <div class="panel"><div class="panel-h"><h2>CAN FD hesaplayıcı</h2></div>
+        <div class="row wrap"><label class="fld"><span>ID (hex)</span><input id="fdId" value="400" size="6"></label>
+          <label class="fld grow"><span>Veri (hex, en çok 64 bayt)</span><input id="fdHex" class="mono" value="DE AD BE EF 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15"></label></div>
+        <div class="row wrap"><label class="chk"><input type="checkbox" id="fdBrs" checked><span>BRS (hızlı veri evresi)</span></label><label class="chk"><input type="checkbox" id="fdPad" checked><span>Geçerli uzunluğa doldur</span></label></div>
+        <div class="row"><button class="btn" id="fdCalc" type="button">Hesapla</button><button class="btn primary" id="fdSend" type="button"><svg class="ico"><use href="#i-zap"/></svg><span>Sanal bus’a gönder</span></button></div>
+        <div id="fdOut" class="kvgrid"></div></div>
+    </div>
+    <div class="panel"><div class="panel-h"><h2>ISO-TP ile birleştirilmiş UDS mesajları</h2></div>
+      <div class="tw"><table class="mono dense"><thead><tr><th>t (s)</th><th>ID</th><th>Servis</th><th>Risk</th><th class="r">Uzunluk</th><th>Çok çerçeveli</th><th>Yük</th></tr></thead><tbody id="udsBody"></tbody></table></div></div>
+  </section>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+<script src="vehicle.js"></script>
+<script src="hardware.js"></script>
+<script type="module" src="car3d.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.db*
+*.log
+*.pid
+.DS_Store
+.env
+firmware/gokguard/build/
+data/dbc_live.json
+data/custom_rules.json
+
+# generated reports
+reports/

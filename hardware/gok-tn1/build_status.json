@@ -1,0 +1,22 @@
+{
+  "board_mm": [
+    84.0,
+    56.0
+  ],
+  "footprints": 38,
+  "nets": 26,
+  "routing": {
+    "tracks": 396,
+    "vias": 36
+  },
+  "unconnected_after_route": 0,
+  "copper_pours": [
+    "F.Cu",
+    "B.Cu"
+  ],
+  "erc": "0 errors, 0 warnings",
+  "drc": "0 errors, 32 warnings (fab kuralları: min hole 0.2, copper-edge 0.3)",
+  "erc_errors": 0,
+  "drc_errors": 0,
+  "tool": "KiCad 10 + FreeRouting"
+}

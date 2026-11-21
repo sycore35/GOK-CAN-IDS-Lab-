@@ -1,0 +1,325 @@
+{
+  "bus_name": "Virtual_CAN_HS_500K",
+  "nominal_bitrate_kbps": 500,
+  "messages": [
+    {
+      "id_hex": "0x180",
+      "id_dec": 384,
+      "name": "Engine_Telemetry",
+      "asil_level": "ASIL-B",
+      "cycle_time_ms": 20,
+      "dlc": 8,
+      "signals": [
+        {
+          "name": "rpm",
+          "start_bit": 0,
+          "length": 16,
+          "endian": "little",
+          "scale": 0.25,
+          "offset": 0,
+          "unit": "RPM",
+          "min": 0,
+          "max": 8000
+        },
+        {
+          "name": "engine_temp",
+          "start_bit": 16,
+          "length": 8,
+          "endian": "little",
+          "scale": 1.0,
+          "offset": -40,
+          "unit": "°C",
+          "min": -40,
+          "max": 150
+        },
+        {
+          "name": "throttle_pct",
+          "start_bit": 24,
+          "length": 8,
+          "endian": "little",
+          "scale": 0.392,
+          "offset": 0,
+          "unit": "%",
+          "min": 0,
+          "max": 100
+        }
+      ],
+      "transmitter": "ECU_Engine"
+    },
+    {
+      "id_hex": "0x244",
+      "id_dec": 580,
+      "name": "Vehicle_Speed_Status",
+      "asil_level": "ASIL-B",
+      "cycle_time_ms": 50,
+      "dlc": 8,
+      "signals": [
+        {
+          "name": "speed_kmh",
+          "start_bit": 0,
+          "length": 16,
+          "endian": "little",
+          "scale": 0.01,
+          "offset": 0,
+          "unit": "km/h",
+          "min": 0,
+          "max": 260
+        },
+        {
+          "name": "odometer_km",
+          "start_bit": 16,
+          "length": 32,
+          "endian": "little",
+          "scale": 0.1,
+          "offset": 0,
+          "unit": "km",
+          "min": 0,
+          "max": 999999
+        }
+      ],
+      "transmitter": "ECU_Brake"
+    },
+    {
+      "id_hex": "0x0C4",
+      "id_dec": 196,
+      "name": "Steering_Sensor",
+      "asil_level": "ASIL-D",
+      "cycle_time_ms": 10,
+      "dlc": 8,
+      "signals": [
+        {
+          "name": "steering_angle_deg",
+          "start_bit": 0,
+          "length": 16,
+          "endian": "little",
+          "scale": 0.1,
+          "offset": -500.0,
+          "unit": "deg",
+          "min": -500,
+          "max": 500
+        },
+        {
+          "name": "steering_rate",
+          "start_bit": 16,
+          "length": 16,
+          "endian": "little",
+          "scale": 0.5,
+          "offset": -250.0,
+          "unit": "deg/s",
+          "min": -250,
+          "max": 250
+        },
+        {
+          "name": "secoc_freshness",
+          "start_bit": 32,
+          "length": 8,
+          "endian": "little",
+          "scale": 1.0,
+          "offset": 0,
+          "unit": "",
+          "min": 0,
+          "max": 255
+        },
+        {
+          "name": "secoc_mac",
+          "start_bit": 40,
+          "length": 24,
+          "endian": "little",
+          "scale": 1.0,
+          "offset": 0,
+          "unit": "",
+          "min": 0,
+          "max": 16777215
+        }
+      ],
+      "transmitter": "ECU_Steering"
+    },
+    {
+      "id_hex": "0x200",
+      "id_dec": 512,
+      "name": "Brake_Safety_Control",
+      "asil_level": "ASIL-D",
+      "cycle_time_ms": 20,
+      "dlc": 8,
+      "signals": [
+        {
+          "name": "brake_pressure_bar",
+          "start_bit": 0,
+          "length": 16,
+          "endian": "little",
+          "scale": 0.01,
+          "offset": 0,
+          "unit": "bar",
+          "min": 0,
+          "max": 180
+        },
+        {
+          "name": "gear_position",
+          "start_bit": 16,
+          "length": 8,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "",
+          "min": 0,
+          "max": 6
+        },
+        {
+          "name": "rolling_counter",
+          "start_bit": 48,
+          "length": 4,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "cnt",
+          "min": 0,
+          "max": 15
+        },
+        {
+          "name": "crc8_checksum",
+          "start_bit": 56,
+          "length": 8,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "hex",
+          "min": 0,
+          "max": 255
+        }
+      ],
+      "transmitter": "ECU_Brake"
+    },
+    {
+      "id_hex": "0x320",
+      "id_dec": 800,
+      "name": "Body_Status",
+      "asil_level": "ASIL-A",
+      "cycle_time_ms": 100,
+      "dlc": 4,
+      "signals": [
+        {
+          "name": "doors_locked",
+          "start_bit": 0,
+          "length": 1,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "bool",
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "turn_signal",
+          "start_bit": 1,
+          "length": 2,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "enum",
+          "min": 0,
+          "max": 3
+        },
+        {
+          "name": "hazard_active",
+          "start_bit": 3,
+          "length": 1,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "bool",
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "transmitter": "ECU_Body"
+    },
+    {
+      "id_hex": "0x2A0",
+      "id_dec": 672,
+      "name": "Transmission_Status",
+      "asil_level": "ASIL-B",
+      "cycle_time_ms": 50,
+      "dlc": 4,
+      "transmitter": "ECU_Transmission",
+      "signals": [
+        {
+          "name": "gear_actual",
+          "start_bit": 0,
+          "length": 4,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "",
+          "min": 0,
+          "max": 6
+        },
+        {
+          "name": "gear_selected",
+          "start_bit": 4,
+          "length": 4,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "",
+          "min": 0,
+          "max": 6
+        },
+        {
+          "name": "trans_temp",
+          "start_bit": 8,
+          "length": 8,
+          "endian": "little",
+          "scale": 1,
+          "offset": -40,
+          "unit": "°C",
+          "min": -40,
+          "max": 150
+        },
+        {
+          "name": "shift_in_progress",
+          "start_bit": 16,
+          "length": 1,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "bool",
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id_hex": "0x3C0",
+      "id_dec": 960,
+      "name": "Cluster_Display",
+      "asil_level": "QM",
+      "cycle_time_ms": 100,
+      "dlc": 4,
+      "transmitter": "ECU_Cluster",
+      "signals": [
+        {
+          "name": "displayed_speed",
+          "start_bit": 0,
+          "length": 16,
+          "endian": "little",
+          "scale": 0.01,
+          "offset": 0,
+          "unit": "km/h",
+          "min": 0,
+          "max": 300
+        },
+        {
+          "name": "warning_lamps",
+          "start_bit": 16,
+          "length": 8,
+          "endian": "little",
+          "scale": 1,
+          "offset": 0,
+          "unit": "bits",
+          "min": 0,
+          "max": 255
+        }
+      ]
+    }
+  ]
+}

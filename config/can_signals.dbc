@@ -1,0 +1,47 @@
+VERSION ""
+
+NS_ :
+
+BS_:
+
+BU_: Gateway ECU_Brake ECU_Engine ECU_Body ECU_Steering
+
+BO_ 384 Engine_Telemetry: 8 ECU_Engine
+ SG_ rpm : 0|16@1+ (0.25,0) [0|8000] "RPM" Gateway
+ SG_ engine_temp : 16|8@1+ (1,-40) [-40|150] "°C" Gateway
+ SG_ throttle_pct : 24|8@1+ (0.392,0) [0|100] "%" Gateway
+
+BO_ 580 Vehicle_Speed_Status: 8 Gateway
+ SG_ speed_kmh : 0|16@1+ (0.01,0) [0|260] "km/h" Gateway
+ SG_ odometer_km : 16|32@1+ (0.1,0) [0|999999] "km" Gateway
+
+BO_ 196 Steering_Sensor: 8 ECU_Steering
+ SG_ steering_angle_deg : 0|16@1+ (0.1,-500) [-500|500] "deg" Gateway
+ SG_ steering_rate : 16|16@1+ (0.5,-250) [-250|250] "deg/s" Gateway
+ SG_ secoc_freshness : 32|8@1+ (1,0) [0|255] "" Gateway
+ SG_ secoc_mac : 40|24@1+ (1,0) [0|16777215] "" Gateway
+
+BO_ 512 Brake_Safety_Control: 8 ECU_Brake
+ SG_ brake_pressure_bar : 0|16@1+ (0.01,0) [0|180] "bar" Gateway
+ SG_ gear_position : 16|8@1+ (1,0) [0|6] "" Gateway
+ SG_ rolling_counter : 48|4@1+ (1,0) [0|15] "cnt" Gateway
+ SG_ crc8_checksum : 56|8@1+ (1,0) [0|255] "hex" Gateway
+
+BO_ 800 Body_Status: 4 ECU_Body
+ SG_ doors_locked : 0|1@1+ (1,0) [0|1] "bool" Gateway
+ SG_ turn_signal : 1|2@1+ (1,0) [0|3] "enum" Gateway
+ SG_ hazard_active : 3|1@1+ (1,0) [0|1] "bool" Gateway
+
+CM_ BO_ 512 "Safety-critical brake control with embedded SAE J1850 CRC-8 and 4-bit rolling counter.";
+CM_ SG_ 512 crc8_checksum "Application-layer E2E checksum calculated over bytes 0..6.";
+CM_ SG_ 512 rolling_counter "Monotonically incrementing 4-bit sequence counter (0..15).";
+
+BO_ 672 Transmission_Status: 4 ECU_Transmission
+ SG_ gear_actual : 0|4@1+ (1,0) [0|6] "" Gateway
+ SG_ gear_selected : 4|4@1+ (1,0) [0|6] "" Gateway
+ SG_ trans_temp : 8|8@1+ (1,-40) [-40|150] "°C" Gateway
+ SG_ shift_in_progress : 16|1@1+ (1,0) [0|1] "bool" Gateway
+
+BO_ 960 Cluster_Display: 4 ECU_Cluster
+ SG_ displayed_speed : 0|16@1+ (0.01,0) [0|300] "km/h" Gateway
+ SG_ warning_lamps : 16|8@1+ (1,0) [0|255] "bits" Gateway
